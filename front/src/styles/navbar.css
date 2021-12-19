@@ -1,0 +1,14 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    height: 55px;
+    width: 100%;
+    background-color: #d55;
+    color: white;
+    display: grid;
+    align-items:center;
+    grid-template-columns: 50% 50%;
+    z-index: 4;
+}
+
+
