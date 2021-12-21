@@ -9,7 +9,7 @@ const getAllSellers = async (res,req) => {
         }
         else
         {
-            await res.send(allSellers) 
+            await res.send(allSellers); 
         }
     }
 
@@ -30,12 +30,25 @@ const createSeller = async(res,req) => {
     catch(e)
     {
         console.log(e);
-        res.send("Didn't work buddy")
+        res.send("It didn't work buddy");
     }
 }
 
 const addProfileDescription = async(res,req) => {
 
+    Seller.findById(req.body.id, (err, result) =>{
+        if(err)
+        {
+            console.log(err);
+            res.send("It didn't work buddy");
+        }
+        else
+        {
+            result.profileDescription = req.body.profileDescription;
+            res.send("profile description added")
+        }
+        
+    })
 }
 
 module.exports = {
