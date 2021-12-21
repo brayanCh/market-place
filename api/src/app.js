@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
+require('dotenv').config();
 
 // it changes the server port or defaults to 4200
 
@@ -20,9 +21,9 @@ app.use("/users", require("./routes/user.routes"));
 app.use("/proyects", require("./routes/proyects.routes"));
 
 
-// connect
+// connection
 
-//const connectionUrl = 
+const connectionUrl = process.env.MONGO_KEY 
 
 mongoose.connect(connectionUrl)
 .then(() => (
