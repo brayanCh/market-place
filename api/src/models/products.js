@@ -14,11 +14,20 @@ const productSch = mongoose.Schema({
         type: Number,
         required: true
     }, 
-    content: {
+    description: {
         type: String,
         required: true
     }, 
+    category: {
+        type: String,
+        required: true
+    }, 
+    tags: [String],
 
+    stock: {
+        type: Number,
+        required: true
+    }
 });
 
 
