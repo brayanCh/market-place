@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const modSch = mongoose.Schema({
+const sellerSch = mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -14,8 +14,13 @@ const modSch = mongoose.Schema({
     password: {
         type: String,
         required: true,
-    }
+    },
+    isBanned: {
+        type: Boolean,
+        required: true,
+    },
+    profileDescription: String
 });
 
 
-module.exports = mongoose.model("Moderator", modSch);
+module.exports = mongoose.model("Seller", sellerSch);

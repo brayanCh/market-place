@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
-const modSch = mongoose.Schema({
+const buyerSch = mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true
     }, 
     email: {
         type: String,
@@ -14,8 +13,13 @@ const modSch = mongoose.Schema({
     password: {
         type: String,
         required: true,
-    }
+    },
+    isBanned: {
+        type: Boolean,
+        required: true,
+    },
+    preferences: [String]
 });
 
 
-module.exports = mongoose.model("Moderator", modSch);
+module.exports = mongoose.model("Buyer", buyerSch);
