@@ -18,6 +18,7 @@ app.use(cors());
 // routes
 
 app.use("/sellers", require("./routes/seller.routes"));
+app.use("/mods", require("./routes/moderator.routes"));
 
 
 // connection
