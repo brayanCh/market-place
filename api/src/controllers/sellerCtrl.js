@@ -1,6 +1,6 @@
 const Seller = require("../models/sellers");
 
-const getAllSellers = async (res,req) => {
+const getAllSellers = async (req, res) => {
 
     Seller.find({}, (err, allSellers) => {
         if(err)
@@ -9,13 +9,12 @@ const getAllSellers = async (res,req) => {
         }
         else
         {
-            await res.send(allSellers); 
+            res.send(allSellers); 
         }
-    }
+    });
+};
 
-}
-
-const createSeller = async(res,req) => {
+const createSeller = async(req, res) => {
 
     try{
         const newSeller = new Seller({
@@ -34,7 +33,7 @@ const createSeller = async(res,req) => {
     }
 }
 
-const addProfileDescription = async(res,req) => {
+const addProfileDescription = async(req,res) => {
 
     Seller.findById(req.body.id, (err, result) =>{
         if(err)

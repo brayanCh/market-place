@@ -4,7 +4,7 @@ const useInput = someVal => {
 
     const [ val, setVar] = useState(someVal);
 
-    const setter = () => setVar(e.target.value);
+    const setter = e => setVar(e.target.value);
 
     return [val, setter];
 }
