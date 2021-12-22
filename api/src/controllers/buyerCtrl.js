@@ -1,29 +1,30 @@
-const Seller = require("../models/sellers");
+const Buyer = require("../models/sellers");
 
-const getAllSellers = async (req, res) => {
+const getAllBuyers = async (req, res) => {
 
-    Seller.find({}, (err, allSellers) => {
+    Buyer.find({}, (err, all) => {
         if(err)
         {
             console.log(err);
         }
         else
         {
-            res.send(allSellers); 
+            res.send(all); 
         }
     });
 };
 
-const createSeller = async(req, res) => {
+const createBuyer = async(req, res) => {
 
     try{
-        const newSeller = new Seller({
+        const newBuyer = new Buyer({
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
             isBanned: false,
+            preferences: []
         })
-        await newSeller.save();
+        await newBuyer.save();
         res.send("created");
     }
     catch(e)
@@ -33,7 +34,7 @@ const createSeller = async(req, res) => {
     }
 }
 
-const actualizeProfile = async(req,res) => {
+const actualizePreferences = async(req,res) => {
 
     Seller.findById(req.body.id, (err, result) =>{
         if(err)
@@ -43,15 +44,15 @@ const actualizeProfile = async(req,res) => {
         }
         else
         {
-            result.profileDescription = req.body.profileDescription;
-            res.send("profile description added")
+            result.push(req.body.preferences);
+            res.send("ok")
         }
     })
 }
 
 const changeName = async(req,res) => {
 
-    Seller.findById(req.body.id, (err, result) =>{
+    Buyer.findById(req.body.id, (err, result) =>{
         if(err)
         {
             console.log(err);
@@ -60,17 +61,33 @@ const changeName = async(req,res) => {
         else
         {
             result.name = req.body.name;
-            res.send("profile description added")
+            res.send("name changed")
+        }
+        
+    })
+}
+
+const changeBanState = async(req,res) => {
+    Seller.findById(req.body.id, (err, result) =>{
+        if(err)
+        {
+            console.log(err);
+            res.send("It didn't work buddy");
+        }
+        else
+        {
+            result.isBanned = req.body.isBanned;
+            res.send("changed ban state")
         }
         
     })
 }
 
 
-
 module.exports = {
-    getAllSellers: getAllSellers,
-    createSeller: createSeller, 
-    actualizeProfile: actualizeProfile,
-    changeName: changeName
+    getAllBuyers: getAllBuyers,
+    createBuyer: createBuyer, 
+    actualizePreferences: actualizePreferences,
+    changeName: changeName,
+    changeBanState: changeBanState
 };

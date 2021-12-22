@@ -60,17 +60,33 @@ const changeName = async(req,res) => {
         else
         {
             result.name = req.body.name;
-            res.send("profile description added")
+            res.send("changed name")
+        }
+        
+    })
+}
+
+const changeBanState = async(req,res) => {
+    Seller.findById(req.body.id, (err, result) =>{
+        if(err)
+        {
+            console.log(err);
+            res.send("It didn't work buddy");
+        }
+        else
+        {
+            result.isBanned = req.body.isBanned;
+            res.send("changed ban state")
         }
         
     })
 }
 
 
-
 module.exports = {
     getAllSellers: getAllSellers,
     createSeller: createSeller, 
     actualizeProfile: actualizeProfile,
-    changeName: changeName
+    changeName: changeName,
+    changeBanState: changeBanState
 };
