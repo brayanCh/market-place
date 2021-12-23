@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { getAllBuyers, createBuyer, actualizePreferences, changeName changeBanState } = require("../controllers/buyerCtrl");
+const { getAllBuyers, createBuyer, actualizePreferences, changeName, changeBanState } = require("../controllers/buyerCtrl");
 
 
 router.get("/", getAllBuyers);

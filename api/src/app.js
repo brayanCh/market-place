@@ -20,6 +20,7 @@ app.use(cors());
 app.use("/sellers", require("./routes/seller.routes"));
 app.use("/mods", require("./routes/moderator.routes"));
 app.use("/buyer", require("./routes/buyer.routes"));
+app.use("/product", require("./routes/product.routes"));
 
 
 // connection
