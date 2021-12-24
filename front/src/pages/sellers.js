@@ -1,4 +1,4 @@
-import SellerForm from "../components/forms/sellerForm";
+import SellerForm from "../components/forms/registerForm";
 
 
 
