@@ -1,4 +1,4 @@
-const Buyer = require("../models/sellers");
+const Buyer = require("../models/buyers");
 
 const getAllBuyers = async (req, res) => {
 

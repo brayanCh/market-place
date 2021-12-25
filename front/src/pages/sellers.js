@@ -1,4 +1,3 @@
-import SellerForm from "../components/forms/registerForm";
 
 
 
@@ -18,7 +17,6 @@ const ViewSellers = () => {
             <div>
                 <h2>Create Seller</h2>
                 
-                <SellerForm />
             </div>
             <h2>add Profile description</h2>
         </div>

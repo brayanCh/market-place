@@ -1,11 +1,13 @@
-import useInput  from "../../logic/useInput";
+import useInput  from "../logic/useInput";
+import "../styles/forms.css";
 
 
-const SellerForm = () => {
+const FormUser  = () => {
 
     const [name, setName] = useInput("");
     const [email, setEmail] = useInput("");
     const [password, setPassword] = useInput("");
+    const [typeUser, setType] = useInput("buyers");
 
     const enviar = async (e) => {
 
@@ -23,14 +25,16 @@ const SellerForm = () => {
             body: JSON.stringify(sended)
         }
 
-        fetch("http://localhost:4200/sellers", packagePosted)
+        fetch("http://localhost:4200/" + typeUser , packagePosted)
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(err => console.log(err));
     }
 
     return(
-        <form onSubmit={enviar} > 
+        <form className="flexcenter formd"onSubmit={enviar} > 
+
+
             <p> Name </p>
             <input value={name} onChange={setName} />
 
@@ -40,9 +44,15 @@ const SellerForm = () => {
             <p>password</p>
             <input type="password" value={password} onChange={setPassword} />
 
+            <p>Type of account</p>
+            <select value={typeUser} onChange={setType} >
+                <option value="buyers"> Client </option>
+                <option value="sellers"> Seller </option>
+                <option value="mods"> Moderators </option>
+            </select>
             <button> Send </button>
         </form>
     );
 };
 
-export default SellerForm;
+export default FormUser;
