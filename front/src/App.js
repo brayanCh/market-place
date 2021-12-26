@@ -4,7 +4,6 @@ import "./styles/main.css";
 
 // pages
 
-import ViewSellers from "./pages/sellers";
 import Register from "./pages/register";
 
 
@@ -16,7 +15,6 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<p> Prueba </p>} />
-                <Route path="/sellers" element={<ViewSellers />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="*" element={<p> Error </p>} />
             </Routes>

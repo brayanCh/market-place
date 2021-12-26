@@ -11,4 +11,24 @@
     z-index: 4;
 }
 
+.link-container{
+    display:flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+}
+
+.link-container a{
+    margin: 0 20px;
+    color:#fff;
+    text-decoration: none; 
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.link-container a:hover{
+    color:#d55;
+    background-color: #fff;
+    text-decoration: none; 
+}
+
 

@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     
     return (
-        <nav className="navbar flexcenter" >
+        <nav className="navbar " >
             
-            <Link to="/"> Home </Link>
-            <Link to="/sellers"> Sellers view </Link>
-            <Link to="/register"> Registro  </Link>
+            <div>
+
+            </div>
+            <div className="link-container">
+                <Link to="/"> Home </Link>
+                <Link to="/register"> Registro  </Link>
+            </div>
         </nav>
     )
 }
