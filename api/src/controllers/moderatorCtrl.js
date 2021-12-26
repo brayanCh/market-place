@@ -1,4 +1,5 @@
 const Moderator = require("../models/moderators");
+const bcrypt = require("bcryptjs");
 
 const getAllMods = async (req, res) => {
 
@@ -17,13 +18,21 @@ const getAllMods = async (req, res) => {
 const createMod = async(req, res) => {
 
     try{
-        const newMod = new Moderator({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-        })
-        await newMod.save();
-        res.send("created");
+
+
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(req.body.password, salt, function(err, hash) {
+
+                const newMod = new Moderator({
+                    name: req.body.name,
+                    email: req.body.email,
+                    password: hash,
+                })
+
+                newMod.save();
+                res.send("created");
+            });
+        });
     }
     catch(e)
     {

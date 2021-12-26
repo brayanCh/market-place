@@ -1,4 +1,5 @@
 const Buyer = require("../models/buyers");
+const bcrypt = require("bcryptjs");
 
 const getAllBuyers = async (req, res) => {
 
@@ -17,15 +18,23 @@ const getAllBuyers = async (req, res) => {
 const createBuyer = async(req, res) => {
 
     try{
-        const newBuyer = new Buyer({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-            isBanned: false,
-            preferences: []
-        })
-        await newBuyer.save();
-        res.send("created");
+
+
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(req.body.password, salt, function(err, hash) {
+
+                const newBuyer = new Buyer({
+                    name: req.body.name,
+                    email: req.body.email,
+                    password: hash,
+                    isBanned: false,
+                    preferences: []
+                })
+
+                newBuyer.save();
+                res.send("created");
+            });
+        });
     }
     catch(e)
     {

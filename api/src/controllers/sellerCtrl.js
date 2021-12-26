@@ -1,4 +1,5 @@
 const Seller = require("../models/sellers");
+const bcrypt = require("bcryptjs");
 
 const getAllSellers = async (req, res) => {
 
@@ -17,14 +18,23 @@ const getAllSellers = async (req, res) => {
 const createSeller = async(req, res) => {
 
     try{
-        const newSeller = new Seller({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-            isBanned: false,
-        })
-        await newSeller.save();
-        res.send("created");
+
+
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(req.body.password, salt, function(err, hash) {
+
+                const newSeller = new Seller({
+                    name: req.body.name,
+                    email: req.body.email,
+                    password: hash,
+                    isBanned: false,
+                })
+
+                newSeller.save();
+                res.send("created");
+            });
+        });
+
     }
     catch(e)
     {
@@ -67,6 +77,7 @@ const changeName = async(req,res) => {
 }
 
 const changeBanState = async(req,res) => {
+
     Seller.findById(req.body.id, (err, result) =>{
         if(err)
         {
