@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { getAllSellers, createSeller, actualizeProfile, changeName, changeBanState } = require("../controllers/sellerCtrl");
+const { validate, createSeller, actualizeProfile, changeName, changeBanState } = require("../controllers/sellerCtrl");
 
 
-router.get("/", getAllSellers);
 router.post("/", createSeller);
+router.post("/validate");
 
 router.post("/profile", actualizeProfile);
 router.post("/name", changeName);

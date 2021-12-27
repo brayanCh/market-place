@@ -1,20 +1,38 @@
 const Seller = require("../models/sellers");
 const bcrypt = require("bcryptjs");
 
-const getAllSellers = async (req, res) => {
 
-    Seller.find({}, (err, allSellers) => {
+const validate = async (req, res) => {
+
+    Seller.find({email: req.body.email}, (err, result) => {
         if(err)
         {
             console.log(err);
         }
         else
         {
-            res.send(allSellers); 
+            bcrypt(req.body.password, result.password, (err, paswdAreEqual) => {
+
+                if(paswdAreEqual)
+                {
+
+                    if(result.isBanned)
+                    {
+                        res.send("the user is banned");
+                    }
+                    else
+                    {
+                        res.send({
+                            name: result.name,
+                            profileDescription: result.profileDescription
+                        });
+                    }
+                }
+            });
+
         }
     });
-};
-
+}
 const createSeller = async(req, res) => {
 
     try{
@@ -95,7 +113,7 @@ const changeBanState = async(req,res) => {
 
 
 module.exports = {
-    getAllSellers: getAllSellers,
+    validate: validate,
     createSeller: createSeller, 
     actualizeProfile: actualizeProfile,
     changeName: changeName,
