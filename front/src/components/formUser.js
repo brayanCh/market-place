@@ -1,4 +1,5 @@
 import useInput  from "../logic/useInput";
+import NormalInput from "./inputs";
 import "../styles/forms.css";
 
 
@@ -36,16 +37,16 @@ const FormUser  = () => {
 
 
             <p> Name </p>
-            <input value={name} onChange={setName} />
+            <NormalInput value={name} onChange={setName} />
 
             <p> Email </p>
-            <input type="mail" value={email} onChange={setEmail} />
+            <NormalInput type="mail" value={email} onChange={setEmail} />
 
             <p>password</p>
-            <input type="password" value={password} onChange={setPassword} />
+            <NormalInput type="password" value={password} onChange={setPassword} />
 
             <p>Type of account</p>
-            <select value={typeUser} onChange={setType} >
+            <select className="input-normal" value={typeUser} onChange={setType} >
                 <option value="buyers"> Client </option>
                 <option value="sellers"> Seller </option>
                 <option value="mods"> Moderators </option>

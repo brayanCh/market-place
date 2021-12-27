@@ -1,5 +1,19 @@
 
 .formd{
     flex-direction: column;
-    height: 85%;
+}
+
+.formd p, select{
+    margin: 20px 0;
+} 
+
+
+
+
+.input-normal{
+    text-align:center;
+    width: 200px;
+    height: 20px;
+    max-width: 80%;
+    margin: 10px 0;
 }
