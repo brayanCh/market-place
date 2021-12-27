@@ -5,7 +5,7 @@ import "./styles/main.css";
 // pages
 
 import Register from "./pages/register";
-
+import LoginPage from "./pages/login";
 
 
 
@@ -16,6 +16,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<p> Prueba </p>} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="*" element={<p> Error </p>} />
             </Routes>
         </BrowserRouter>
