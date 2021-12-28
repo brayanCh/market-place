@@ -1,5 +1,6 @@
 import useInput  from "../logic/useInput";
 import NormalInput from "./inputs";
+import { useState } from "react";
 import "../styles/forms.css";
 
 
@@ -8,6 +9,7 @@ const FormLogin  = () => {
     const [email, setEmail] = useInput("");
     const [password, setPassword] = useInput("");
     const [typeUser, setType] = useInput("buyers");
+    const [stateLogin, setStLogin] = useState("login");
 
     const enviar = async (e) => {
 
