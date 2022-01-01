@@ -33,6 +33,28 @@ const validate = async (req, res) => {
         }
     });
 }
+
+const authentificate = async (req, res) => {
+
+    Seller.find({email: req.body.email}, (err, result) => {
+        if(err)
+        {   
+            console.log(err);
+        }
+        else
+        {
+            if(result === [])
+            {
+                // send mail
+            }
+            else
+            { 
+                res.send("This mate is already here");
+            }
+        }
+    });
+}
+
 const createSeller = async(req, res) => {
 
     try{

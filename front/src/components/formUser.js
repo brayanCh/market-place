@@ -37,7 +37,17 @@ const FormUser  = () => {
 
     const enviarCodigoAuth = async (e) => {
         e.preventDefault();
+        
+        const packagePosted = {
+            method: "POST",
+            headers: {"Content-type": "application/json", "charset":"utf-8"},
+            body: JSON.stringify({email: email})
+        }
 
+        fetch("http://localhost:4200/" + typeUser + "/authentificate", packagePosted)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
         
     }
 

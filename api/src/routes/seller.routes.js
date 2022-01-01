@@ -3,7 +3,7 @@ const { validate, createSeller, actualizeProfile, changeName, changeBanState } =
 
 
 router.post("/", createSeller);
-router.post("/validate");
+router.post("/authentificate");
 
 router.post("/profile", actualizeProfile);
 router.post("/name", changeName);
