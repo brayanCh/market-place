@@ -15,6 +15,29 @@ const getAllBuyers = async (req, res) => {
     });
 };
 
+const authentificate = async (req, res) => {
+
+    Buyer.find({email: req.body.email}, (err, result) => {
+        if(err)
+        {   
+            console.log(err);
+        }
+        else
+        {
+            if(result === [])
+            {
+                let key = Math.round(Math.random() * 1000000);
+                // send mail
+            }
+            else
+            { 
+                res.send("This mate is already here");
+            }
+        }
+    });
+}
+
+
 const createBuyer = async(req, res) => {
 
     try{
@@ -98,5 +121,6 @@ module.exports = {
     createBuyer: createBuyer, 
     actualizePreferences: actualizePreferences,
     changeName: changeName,
-    changeBanState: changeBanState
+    changeBanState: changeBanState;
+    authentificate: authentificate
 };

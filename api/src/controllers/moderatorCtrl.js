@@ -15,6 +15,28 @@ const getAllMods = async (req, res) => {
     });
 };
 
+const authentificate = async (req, res) => {
+
+    Moderator.find({email: req.body.email}, (err, result) => {
+        if(err)
+        {   
+            console.log(err);
+        }
+        else
+        {
+            if(result === [])
+            {
+                let key = Math.round(Math.random() * 1000000);
+                // send mail
+            }
+            else
+            { 
+                res.send("This mate is already here");
+            }
+        }
+    });
+}
+
 const createMod = async(req, res) => {
 
     try{
@@ -44,4 +66,5 @@ const createMod = async(req, res) => {
 module.exports = {
     getAllMods: getAllMods,
     createMod: createMod, 
+    authentificate, authentificate
 };

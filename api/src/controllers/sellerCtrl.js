@@ -45,6 +45,7 @@ const authentificate = async (req, res) => {
         {
             if(result === [])
             {
+                let key = Math.round(Math.random() * 1000000);
                 // send mail
             }
             else
@@ -139,5 +140,6 @@ module.exports = {
     createSeller: createSeller, 
     actualizeProfile: actualizeProfile,
     changeName: changeName,
-    changeBanState: changeBanState
+    changeBanState: changeBanState,
+    authentificate: authentificate
 };
