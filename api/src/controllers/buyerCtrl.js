@@ -121,6 +121,6 @@ module.exports = {
     createBuyer: createBuyer, 
     actualizePreferences: actualizePreferences,
     changeName: changeName,
-    changeBanState: changeBanState;
+    changeBanState: changeBanState,
     authentificate: authentificate
 };

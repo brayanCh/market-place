@@ -27,6 +27,8 @@ const authentificate = async (req, res) => {
             if(result === [])
             {
                 let key = Math.round(Math.random() * 1000000);
+                res.send({keyAuth: key});
+
                 // send mail
             }
             else
@@ -40,7 +42,6 @@ const authentificate = async (req, res) => {
 const createMod = async(req, res) => {
 
     try{
-
 
         bcrypt.genSalt(10, function(err, salt) {
             bcrypt.hash(req.body.password, salt, function(err, hash) {
