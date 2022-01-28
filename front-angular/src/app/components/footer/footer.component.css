@@ -1,0 +1,10 @@
+.footer{
+    margin: 0;
+    height: 150px;
+    background-color: var(--dkvl);
+    background: linear-gradient( #113 ,var(--dkbl), var(--dkbl));
+    color: white;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}

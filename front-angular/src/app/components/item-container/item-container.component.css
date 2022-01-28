@@ -1,0 +1,24 @@
+.item-container-bk{
+    width: 100%;
+    min-height: 600px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    margin: 0;
+}
+
+.item-container-main{
+    margin: 0 auto;
+    width: 1100px;
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter{
+    padding-top: 10px;
+    background-color: var(--dkbl);
+    color: white;
+}

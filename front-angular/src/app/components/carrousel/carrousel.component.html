@@ -1,0 +1,16 @@
+<div [style.background-image]="currentBg"  class="carrousel">
+    <button class="p-left passing-btt" (click)="changeDir(true)" > 
+        <img src="../../../assets/RtoL.png" alt="arrow left to right" >
+    </button>
+    <div class="middle">
+        <div></div>
+    <div class="container-button">
+        <div *ngFor="let x of list" class="outer-shell">
+            <button (click)="changeIndex(x)" class="carrousel-button" [class.pressed]="x === index"></button>
+        </div>
+</div>
+    </div>
+    <button class="p-right passing-btt" (click)="changeDir(false)" >
+        <img src="../../../assets/LtoR.png" alt="arrow left to right" >
+    </button>
+</div>
