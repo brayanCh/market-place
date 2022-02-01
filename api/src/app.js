@@ -1,5 +1,7 @@
 const express = require("express");
+const path = require("path");
 const mongoose = require("mongoose");
+const multer = require("multer");
 const app = express();
 const cors = require("cors");
 require('dotenv').config();
@@ -13,7 +15,11 @@ app.set('port', process.env.PORT || 4200 );
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
-
+app.use(multer(
+    {
+        dest: path.join(__dirname, "public/images") 
+    }
+).single("image"));
 
 // routes
 
