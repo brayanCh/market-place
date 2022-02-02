@@ -8,7 +8,7 @@ require('dotenv').config();
 
 // it changes the server port or defaults to 4200
 
-app.set('port', process.env.PORT || 4200 );
+app.set('port', process.env.PORT || 4300 );
 
 // middleware
 

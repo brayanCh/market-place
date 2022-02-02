@@ -2,8 +2,6 @@
     width: 100%;
     min-height: 600px;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
     margin: 0;
 }
 
