@@ -10,16 +10,16 @@
     grid-template-rows: 10% 90%;
 }
 
-.navbar:hover{
-    width: 150px
-}
-
 .navitem-container{
     display: flex;
     flex-direction: column-reverse;
     margin-right: 1px;
     align-items: center;
     justify-content: top;
+}
+
+.navbar:hover{
+    width:80px;
 }
 
 .logo-container{
@@ -43,5 +43,5 @@
 .logo-container img{
     height: 40px;
     width: 49px;
-    margin-left: 13px;
+    margin-left: 5px;
 }

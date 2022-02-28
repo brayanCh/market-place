@@ -9,9 +9,9 @@
     margin: 0 auto;
     width: 1100px;
     max-width: 90%;
+    padding: 60px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
 }
 

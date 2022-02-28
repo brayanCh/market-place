@@ -7,27 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemContainerComponent implements OnInit {
 
+
+    route = "../../../assets/previews/";
+
     items = [
         {
-            title: "Pineapple",
+            title: "Sweater",
             content: "This is a generic text",
+            src: this.route + "sweater.jpeg",
             price: 399
         },
         {
-            title: "Pen",
+            title: "T Shirt",
             content: "This is a generic text",
+            src: this.route + "t-shirt.jpg",
             price: 440
         },
         {
-            title: "Apple",
+            title: "Gloves",
             content: "This is a generic text",
+            src: this.route + "gloves.jpeg",
             price: 6100
         },
-        {
-            title: "ddefef",
-            content: "This is a generic text",
-            price: 48022
-        }
     ]
 
     constructor() { }
