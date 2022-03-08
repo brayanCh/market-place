@@ -19,7 +19,7 @@ import {
 export class CarrouselComponent implements OnInit {
 
     route = "../../../assets/";
-    images = ["1.jpg", "2.png", "3.jpg", "4.png"];
+    images = ["1.png", "2.png", "3.png", "4.png"];
     list= [0,1,2,3]
     index = 3;
     fade = "linear-gradient(to bottom, rgba(225,140,0,0.0), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.3),rgba(0,0,0,0.7)), url(";
