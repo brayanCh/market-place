@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
     
-    places = [["Log in", "/login"], 
-        ["Sign up", "/signup"],
-        ["Home", "/home"]];
+    places = [
+        ["Log in", "/login"], 
+        ["Sign up", "/signup"] 
+    ];
 
     constructor() { }
 

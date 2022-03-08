@@ -19,10 +19,10 @@ import {
 export class CarrouselComponent implements OnInit {
 
     route = "../../../assets/";
-    images = ["1.jpg", "2.jpg", "3.jpg", "4.png"];
+    images = ["1.jpg", "2.png", "3.jpg", "4.png"];
     list= [0,1,2,3]
     index = 3;
-    fade = "linear-gradient(to bottom, rgba(225,140,0,0.0), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.5),rgba(0,0,0,0.95)), url(";
+    fade = "linear-gradient(to bottom, rgba(225,140,0,0.0), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.3),rgba(0,0,0,0.7)), url(";
     currentBg = this.fade + this.route + this.images[this.index] + ")"
 
     constructor() { }

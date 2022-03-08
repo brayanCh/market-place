@@ -24,5 +24,4 @@
 
 .item-box:hover{
     box-shadow: 3px 3px 10px 4px rgba(0,0,0,0.7);
-    height: 270px;
 }
