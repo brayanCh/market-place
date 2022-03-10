@@ -5,6 +5,7 @@
     --bl: #47b;
     --lbl: #6af;
     --abl: #08d;
+    --bar_height: 65px;
 }
 
 body{
@@ -23,7 +24,7 @@ body * {
 
 .page-container{
     margin: 0 auto;
-    margin-left: 70px;
+    margin-top: var(--bar_height);
     padding: 0;
 }
 
